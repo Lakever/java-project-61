@@ -10,5 +10,6 @@ public class Cli {
         Scanner s = new Scanner(System.in);
         String sname = s.nextLine();
         return sname;
+
     }
 }
