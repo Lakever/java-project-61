@@ -2,11 +2,11 @@ package hexlet.code;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Game {
+public class Engine {
     private int num;
     private String name;
 
-    public Game(int num) {
+    public Engine(int num) {
         this.num = num;
     }
 
@@ -47,4 +47,8 @@ public class Game {
         }
         return "";
     }
+    public String gameCalc(String person) {
+        return "";
+    }
+
 }
