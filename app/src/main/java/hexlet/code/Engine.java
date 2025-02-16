@@ -1,8 +1,5 @@
 package hexlet.code;
-import hexlet.code.games.Calc;
-import hexlet.code.games.Eval;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Greet;
+import hexlet.code.games.*;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -31,6 +28,10 @@ public class Engine {
                 Calc.startGameCalc();
             case 4:
                 GCD.startGameGCD();
+            case 5:
+                Progression.startGameProgression();
+            case 6:
+                Prime.startGamePrime();
         }
 
     }
