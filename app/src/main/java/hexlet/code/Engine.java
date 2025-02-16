@@ -1,6 +1,7 @@
 package hexlet.code;
 import hexlet.code.games.Calc;
 import hexlet.code.games.Eval;
+import hexlet.code.games.GCD;
 import hexlet.code.games.Greet;
 
 import java.util.Random;
@@ -28,7 +29,8 @@ public class Engine {
                 break;
             case 3:
                 Calc.startGameCalc();
-
+            case 4:
+                GCD.startGameGCD();
         }
 
     }
