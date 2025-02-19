@@ -27,9 +27,9 @@ public class Eval {
             String answer = s.nextLine();
             if (answer.equals("Yes") && randomNumber % 2 == 0) {
                 System.out.println("Correct!");
-                countCorrect ++;
+                countCorrect++;
             } else if (answer.equals("No") && randomNumber % 2 != 0) {
-                countCorrect ++;
+                countCorrect++;
                 System.out.println("Correct!");
             } else {
                 System.out.println("'Yes' is wrong answer ;(. Correct answer was 'No'." +

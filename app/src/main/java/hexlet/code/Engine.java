@@ -1,4 +1,5 @@
 package hexlet.code;
+
 import hexlet.code.games.*;
 
 import java.util.Random;
@@ -35,7 +36,6 @@ public class Engine {
         }
 
     }
-
 
 
 //    public String gameEval(String person) {

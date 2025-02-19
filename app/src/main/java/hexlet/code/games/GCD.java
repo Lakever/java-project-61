@@ -30,7 +30,7 @@ public class GCD {
                 b = slag1;
             }
             System.out.println("Find the greatest common divisor of given numbers.");
-            System.out.println("Question: "+ a + " " + b);
+            System.out.println("Question: " + a + " " + b);
             // алгоритм нахождения НОД Евклид
             while (b != 0) {
                 temp = b;
@@ -45,7 +45,7 @@ public class GCD {
                 System.out.println("Correct!");
             } else {
                 System.out.printf("'%d' is wrong answer, Correct answer was '%s'", answer, a);
-                System.out.println("Let's try again, "+ person);
+                System.out.println("Let's try again, " + person);
                 break; // Exit if wrong answer
             }
         }
