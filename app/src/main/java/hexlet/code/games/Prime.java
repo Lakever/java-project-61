@@ -21,7 +21,7 @@ public class Prime {
 
         String answer = scanner.nextLine();
         String status = "";
-        
+
         if (randNum == 2 || randNum == 3) { // исключаем начальные числа(они просты по определению)
             status = "Yes";
             if (answer.equals(status)) {
@@ -29,7 +29,7 @@ public class Prime {
             } else {
                 System.out.println("Uncorrected, let's try again");
             }
-        } else if (randNum % 2 == 0 || randNum % 3 == 0) {// делятся? -> Непростые
+        } else if (randNum % 2 == 0 || randNum % 3 == 0) { // делятся? -> Непростые
             status = "No";
             if (answer.equals(status)) {
                 System.out.println("Correct, it is a not simple num");
@@ -39,7 +39,7 @@ public class Prime {
         } else {
             for (int i = 5; i * i <= randNum; i += 6) { // Проверяем делители, если есть -> Непростое
                 if (randNum % i == 0) {
-                    status = "No";// Непростое число
+                    status = "No"; // Непростое число
                     break;
                 } else { // Если таких не найдено, считаем, что простое
                     status = "Yes";

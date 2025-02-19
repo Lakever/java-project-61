@@ -1,8 +1,13 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Eval;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Greet;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class Engine {
@@ -12,7 +17,6 @@ public class Engine {
         menu.showMenu();
         Scanner input = new Scanner(System.in);
         int num = Integer.parseInt(input.nextLine());
-//        System.out.println("Your choice: " + num);
 
         switch (num) {
             case 0:
@@ -33,6 +37,7 @@ public class Engine {
                 Progression.startGameProgression();
             case 6:
                 Prime.startGamePrime();
+            default: System.out.println("Goodbye!");
         }
 
     }

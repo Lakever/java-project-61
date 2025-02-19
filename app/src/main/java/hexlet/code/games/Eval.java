@@ -32,8 +32,8 @@ public class Eval {
                 countCorrect++;
                 System.out.println("Correct!");
             } else {
-                System.out.println("'Yes' is wrong answer ;(. Correct answer was 'No'." +
-                        "Let's try again, " + person);
+                System.out.println("'Yes' is wrong answer ;(. Correct answer was 'No'."
+                        + "Let's try again, " + person);
                 break;
             }
         }

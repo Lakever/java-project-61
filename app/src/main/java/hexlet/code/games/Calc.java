@@ -11,15 +11,13 @@ public class Calc {
         var person = startGreet(3);
 
 
-
-
         int result = 0;
         String[] arr = {"+", "-", "*"}; // Возможные операции
         int count = 0;
         Scanner s = new Scanner(System.in);
 
         System.out.println("What is the result of the expression?");
-        for (var i = 0; i < 3; i ++) {
+        for (var i = 0; i < 3; i++) {
             int lol = random.nextInt(2);
             if (arr[lol].equals("+")) {
                 int slag1 = random.nextInt(99);
@@ -33,8 +31,9 @@ public class Calc {
 
                 if (res == result) {
                     System.out.println("Correct!");
-                }else {
-                    System.out.println("'"+ res +"'" + "is wrong answer ;(. Correct answer was "+ "'" + result + "'" +".");
+                } else {
+                    System.out.println("'" + res + "'" + "is wrong answer ;(. "
+                            + "Correct answer was " + "'" + result + "'" + ".");
                     System.out.println("Let's try again, " + person);
                     break;
                 }
@@ -51,8 +50,9 @@ public class Calc {
 
                 if (res == result) {
                     System.out.println("Correct!");
-                }else {
-                    System.out.println("'"+ res +"'" + "is wrong answer ;(. Correct answer was "+ "'" + result + "'" +".");
+                } else {
+                    System.out.println("'" + res + "'" + "is wrong answer ;(. "
+                            + "Correct answer was " + "'" + result + "'" + ".");
                     System.out.println("Let's try again, " + person);
                     break;
                 }
@@ -68,13 +68,14 @@ public class Calc {
 
                 if (res == result) {
                     System.out.println("Correct!");
-                }else {
-                    System.out.println("'"+ res +"'" + "is wrong answer ;(. Correct answer was "+ "'" + result + "'" +".");
+                } else {
+                    System.out.println("'" + res + "'" + "is wrong answer ;(. "
+                            + "Correct answer was " + "'" + result + "'" + ".");
                     System.out.println("Let's try again, " + person);
                     break;
                 }
             }
-            System.out.println("Congratulations "+ person + "!");
+            System.out.println("Congratulations " + person + "!");
         }
 
 //        if (arr[lol].equals("+")) {

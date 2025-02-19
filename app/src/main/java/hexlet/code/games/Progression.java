@@ -47,8 +47,9 @@ public class Progression {
                 }
             } else {
                 System.out.println("Your answer: " + answer);
-                System.out.printf("'%d' is wrong answer ;(. Correct answer was '%s'.\n" +
-                        "Let's try again, " + person + "!!", answer, temp);
+                System.out.printf("'%d' is wrong answer ;(. "
+                        + "Correct answer was '%s'.\n" + "Let's try again, "
+                        + person + "!!", answer, temp);
                 break;
             }
         }
