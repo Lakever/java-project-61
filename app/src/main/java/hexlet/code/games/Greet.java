@@ -10,6 +10,7 @@ public class Greet {
     public static String startGreet(int num) {
 
         System.out.println("Your choise: " + num);
+        System.out.println();
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
         person = Cli.greetings();

@@ -14,8 +14,7 @@ public class Eval {
 
 
         Random random = new Random();
-
-        System.out.println("Answer 'Yes' if the number is even, otherwise answer 'No'.");
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 
 
         Scanner s = new Scanner(System.in);
@@ -25,15 +24,15 @@ public class Eval {
             System.out.println("Question: " + randomNumber);
             System.out.println("Your answer: ");
             String answer = s.nextLine();
-            if (answer.equals("Yes") && randomNumber % 2 == 0) {
+            if (answer.equals("yes") && randomNumber % 2 == 0) {
                 System.out.println("Correct!");
                 countCorrect++;
-            } else if (answer.equals("No") && randomNumber % 2 != 0) {
+            } else if (answer.equals("no") && randomNumber % 2 != 0) {
                 countCorrect++;
                 System.out.println("Correct!");
             } else {
-                System.out.println("'Yes' is wrong answer ;(. Correct answer was 'No'."
-                        + "Let's try again, " + person);
+                System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'."
+                        + " Let's try again, " + person);
                 break;
             }
         }
