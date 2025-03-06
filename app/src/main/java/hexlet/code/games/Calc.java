@@ -75,7 +75,7 @@ public class Calc {
                     break;
                 }
             }
-            System.out.println("Congratulations " + person + "!");
+            System.out.println("Congratulations, " + person + "!");
         }
 
 //        if (arr[lol].equals("+")) {
