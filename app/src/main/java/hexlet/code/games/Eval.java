@@ -31,14 +31,14 @@ public class Eval {
                 countCorrect++;
                 if (countCorrect == 3) {
                     System.out.println("Congratulations, " + person);
-                    return "Congratulations, " + person;
+                    return "Congratulations, " + person + "!";
                 }
             } else if (answer.equals("no") && randomNumber % 2 != 0) {
                 countCorrect++;
                 System.out.println("Correct!");
                 if (countCorrect == 3) {
                     System.out.println("Congratulations, " + person);
-                    return "Congratulations, " + person;
+                    return "Congratulations, " + person + "!";
                 }
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'."
