@@ -69,7 +69,7 @@ public class Calc {
                 if (res == result) {
                     System.out.println("Correct!");
                 } else {
-                    System.out.println("'" + res + "'" + "is wrong answer ;(. "
+                    System.out.println("'" + res + "'" + " is wrong answer ;(. "
                             + "Correct answer was " + "'" + result + "'" + ".");
                     System.out.println("Let's try again, " + person);
                     break;

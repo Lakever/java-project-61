@@ -30,12 +30,15 @@ public class Engine {
                 break;
             case 3:
                 Calc.startGameCalc();
+                break;
             case 4:
                 GCD.startGameGCD();
+                break;
             case 5:
                 Progression.startGameProgression();
             case 6:
                 Prime.startGamePrime();
+                break;
             default: System.out.println("Goodbye!");
         }
 
