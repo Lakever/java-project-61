@@ -10,6 +10,7 @@ public class GCD {
         var person = startGreet(4);
 
         int count = 3;
+        int countCorrect = 0;
         for (int i = 0; i < count; i++) {
             Random random = new Random();
 
@@ -18,6 +19,7 @@ public class GCD {
             int a = 0;
             int b = 0;
             int temp = 0;
+
 
 //            System.out.println(slag1);
 //            System.out.println(slag2);
@@ -41,13 +43,20 @@ public class GCD {
             // тут берем ответ от пользователя
             Scanner s = new Scanner(System.in);
             int answer = s.nextInt();
+
             if (answer == a) {
+                countCorrect++;
                 System.out.println("Correct!");
+
             } else {
                 System.out.printf("'%d' is wrong answer, Correct answer was '%s'", answer, a);
+                System.out.println();
                 System.out.println("Let's try again, " + person);
                 break; // Exit if wrong answer
             }
+        }
+        if (countCorrect == 3) {
+            System.out.println("Congratulations, " + person + "!");
         }
     }
 }
