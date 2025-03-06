@@ -34,7 +34,7 @@ public class Calc {
                 } else {
                     System.out.println("'" + res + "'" + "is wrong answer ;(. "
                             + "Correct answer was " + "'" + result + "'" + ".");
-                    System.out.println("Let's try again, " + person);
+                    System.out.println("Let's try again, " + person + "!");
                     break;
                 }
                 System.out.println(res);
@@ -53,7 +53,7 @@ public class Calc {
                 } else {
                     System.out.println("'" + res + "'" + " is wrong answer ;(. "
                             + "Correct answer was " + "'" + result + "'" + ".");
-                    System.out.println("Let's try again, " + person);
+                    System.out.println("Let's try again, " + person + "!");
                     break;
                 }
             } else {
@@ -71,7 +71,7 @@ public class Calc {
                 } else {
                     System.out.println("'" + res + "'" + " is wrong answer ;(. "
                             + "Correct answer was " + "'" + result + "'" + ".");
-                    System.out.println("Let's try again, " + person);
+                    System.out.println("Let's try again, " + person + "!");
                     break;
                 }
             }

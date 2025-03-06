@@ -42,7 +42,7 @@ public class Eval {
                 }
             } else {
                 System.out.println("'yes' is wrong answer ;(. Correct answer was 'no'."
-                        + " Let's try again, " + person);
+                        + " Let's try again, " + person + "!");
                 break;
             }
         }
