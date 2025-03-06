@@ -14,6 +14,7 @@ public class Calc {
         int result = 0;
         String[] arr = {"+", "-", "*"}; // Возможные операции
         int count = 0;
+        int countCorrect = 0;
         Scanner s = new Scanner(System.in);
 
         System.out.println("What is the result of the expression?");
@@ -27,9 +28,11 @@ public class Calc {
 
                 result = slag1 + slag2;
                 int res = s.nextInt();
+
                 System.out.println("Your answer: " + res);
 
                 if (res == result) {
+                    countCorrect++;
                     System.out.println("Correct!");
                 } else {
                     System.out.println("'" + res + "'" + "is wrong answer ;(. "
@@ -37,7 +40,6 @@ public class Calc {
                     System.out.println("Let's try again, " + person + "!");
                     break;
                 }
-                System.out.println(res);
             } else if (arr[lol].equals("-")) {
                 int slag1 = random.nextInt(99);
                 int slag2 = random.nextInt(99);
@@ -49,6 +51,7 @@ public class Calc {
                 System.out.println("Your answer: " + res);
 
                 if (res == result) {
+                    countCorrect++;
                     System.out.println("Correct!");
                 } else {
                     System.out.println("'" + res + "'" + " is wrong answer ;(. "
@@ -67,6 +70,7 @@ public class Calc {
                 System.out.println("Your answer: " + res);
 
                 if (res == result) {
+                    countCorrect++;
                     System.out.println("Correct!");
                 } else {
                     System.out.println("'" + res + "'" + " is wrong answer ;(. "
@@ -75,7 +79,7 @@ public class Calc {
                     break;
                 }
             }
-            System.out.println("Congratulations, " + person + "!");
+
         }
 
 //        if (arr[lol].equals("+")) {
@@ -93,6 +97,8 @@ public class Calc {
 //
 //        }
 
-
+        if (countCorrect == 3) {
+            System.out.println("Congratulations, " + person + "!");
+        }
     }
 }
