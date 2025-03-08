@@ -51,7 +51,7 @@ public class GCD {
             } else {
                 System.out.printf("'%d' is wrong answer, Correct answer was '%s'", answer, a);
                 System.out.println();
-                System.out.println("Let's try again, " + person);
+                System.out.println("Let's try again, " + person + "!");
                 break; // Exit if wrong answer
             }
         }

@@ -25,16 +25,23 @@ public class Prime {
         if (randNum == 2 || randNum == 3) { // исключаем начальные числа(они просты по определению)
             status = "Yes";
             if (answer.equals(status)) {
-                System.out.println("Correct, our congratulations, " + person);
+                System.out.printf("Your answer: '%d'", answer);
+                System.out.println("Correct!");
             } else {
-                System.out.println("Uncorrected, let's try again");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. "
+                        + "Correct answer was " + "'Yes'" + ".");
+                System.out.println("Let's try again, " + person + "!");
             }
         } else if (randNum % 2 == 0 || randNum % 3 == 0) { // делятся? -> Непростые
             status = "No";
             if (answer.equals(status)) {
-                System.out.println("Correct, it is a not simple num");
+                System.out.printf("Your answer: '%d'", answer);
+                System.out.println("Correct!");
             } else {
-                System.out.println("Uncorrected, it is a simple num ,let's try again");
+//
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. "
+                        + "Correct answer was " + "'Yes'" + ".");
+                System.out.println("Let's try again, " + person + "!");
             }
         } else {
             for (int i = 5; i * i <= randNum; i += 6) { // Проверяем делители, если есть -> Непростое
@@ -46,9 +53,12 @@ public class Prime {
                 }
             }
             if (answer.equals(status)) {
-                System.out.println("Correct, our congratulations, " + person + ", its a simple num");
+                System.out.printf("Your answer: '%d'", answer);
+                System.out.println("Correct!");
             } else {
-                System.out.println("Uncorrected, it is a simple num ,let's try again");
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. "
+                        + "Correct answer was " + "'Yes'" + ".");
+                System.out.println("Let's try again, " + person + "!");
             }
         }
     }
