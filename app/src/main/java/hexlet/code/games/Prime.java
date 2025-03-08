@@ -22,7 +22,7 @@ public class Prime {
         String status = "";
 
         if (randNum == 2 || randNum == 3) { // исключаем начальные числа(они просты по определению)
-            status = "Yes";
+            status = "yes";
             if (answer.equals(status)) {
                 System.out.printf("Your answer: '%d'", answer);
                 System.out.println("Correct!");
@@ -32,23 +32,23 @@ public class Prime {
                 System.out.println("Let's try again, " + person + "!");
             }
         } else if (randNum % 2 == 0 || randNum % 3 == 0) { // делятся? -> Непростые
-            status = "No";
+            status = "no";
             if (answer.equals(status)) {
                 System.out.printf("Your answer: '%d'", answer);
                 System.out.println("Correct!");
             } else {
 //
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. "
-                        + "Correct answer was " + "'Yes'" + ".");
+                        + "Correct answer was " + "'yes'" + ".");
                 System.out.println("Let's try again, " + person + "!");
             }
         } else {
             for (int i = 5; i * i <= randNum; i += 6) { // Проверяем делители, если есть -> Непростое
                 if (randNum % i == 0) {
-                    status = "No"; // Непростое число
+                    status = "no"; // Непростое число
                     break;
                 } else { // Если таких не найдено, считаем, что простое
-                    status = "Yes";
+                    status = "yes";
                 }
             }
             if (answer.equals(status)) {
@@ -56,7 +56,7 @@ public class Prime {
                 System.out.println("Correct!");
             } else {
                 System.out.println("'" + answer + "'" + " is wrong answer ;(. "
-                        + "Correct answer was " + "'Yes'" + ".");
+                        + "Correct answer was " + "'yes'" + ".");
                 System.out.println("Let's try again, " + person + "!");
             }
         }
