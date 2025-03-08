@@ -15,9 +15,8 @@ public class Prime {
         Random rand = new Random();
         int randNum = rand.nextInt(100) + 1;
         Scanner scanner = new Scanner(System.in);
-
-        System.out.println(randNum + " is a simple num?");
-        System.out.println("Vote 'Yes' or 'No'");
+        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        System.out.println("Question: " + randNum);
 
         String answer = scanner.nextLine();
         String status = "";

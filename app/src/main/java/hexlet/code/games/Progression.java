@@ -12,11 +12,11 @@ public class Progression {
 
         for (int j = 0; j < 3; j++) {
             System.out.println("What number is missing in the progression?");
+
             String[] arr = new String[10];
             Random random = new Random();
             int raznost = random.nextInt(9) + 1;
             for (int i = 0; i < arr.length; i++) {
-
                 if (i == 0) {
                     arr[i] = Integer.toString(random.nextInt(raznost));
                 } else {
@@ -33,9 +33,10 @@ public class Progression {
                     arr[i] = "..";
                 }
             }
-
-
-            System.out.println(Arrays.toString(arr));
+//            var array = Arrays.toString(arr);
+//            String result = String.join(" ",array);
+//            System.out.println("TEST " + result);
+            System.out.println("Question: " + Arrays.toString(arr));
 
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
