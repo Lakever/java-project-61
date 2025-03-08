@@ -36,6 +36,7 @@ public class Engine {
                 break;
             case 5:
                 Progression.startGameProgression();
+                break;
             case 6:
                 Prime.startGamePrime();
                 break;

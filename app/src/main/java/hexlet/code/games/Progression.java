@@ -33,11 +33,13 @@ public class Progression {
                     arr[i] = "..";
                 }
             }
+            //Печать массива
             var array = Arrays.toString(arr);
             array =  array.replace("[", "").replace("]", "").replace(",", "");
 //            String result = String.join(" ",array);
 //            System.out.println("TEST " + result);
             System.out.println("Question: " + array);
+
 
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
@@ -51,7 +53,7 @@ public class Progression {
                 System.out.println("Your answer: " + answer);
                 System.out.printf("'%d' is wrong answer ;(. "
                         + "Correct answer was '%s'.\n" + "Let's try again, "
-                        + person + "!!", answer, temp);
+                        + person + "!", answer, temp);
                 break;
             }
         }
