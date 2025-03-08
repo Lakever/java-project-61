@@ -33,10 +33,11 @@ public class Progression {
                     arr[i] = "..";
                 }
             }
-//            var array = Arrays.toString(arr);
+            var array = Arrays.toString(arr);
+            array =  array.replace("[", "").replace("]", "").replace(",", "");
 //            String result = String.join(" ",array);
 //            System.out.println("TEST " + result);
-            System.out.println("Question: " + Arrays.toString(arr));
+            System.out.println("Question: " + array);
 
             Scanner scanner = new Scanner(System.in);
             int answer = scanner.nextInt();
