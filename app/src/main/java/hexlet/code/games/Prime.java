@@ -6,17 +6,21 @@ import java.util.Scanner;
 import static hexlet.code.games.Greet.startGreet;
 
 public class Prime {
+    // Именованные константы для магических чисел
+    private static final int GAME_COUNT = 6; // Параметр для startGreet
+    private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
+    private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
+
     public static void startGamePrime() {
-        var person = startGreet(6);
+        var person = startGreet(GAME_COUNT);
         int count = 0;
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
 
-        for (var j = 0; j < 3; j ++) {
-            Random rand = new Random();
-            Scanner scanner = new Scanner(System.in);
+        Random rand = new Random();
+        Scanner scanner = new Scanner(System.in);
 
-
-            int randNum = rand.nextInt(100) + 1;
+        for (var j = 0; j < REQUIRED_CORRECT_ANSWERS; j++) {
+            int randNum = rand.nextInt(MAX_RANDOM_NUMBER) + 1;
             System.out.println("Question: " + randNum);
 
             String answer = scanner.nextLine();
@@ -42,7 +46,7 @@ public class Prime {
                 System.out.printf("Your answer: '%s'\n", answer);
                 System.out.println("Correct!");
                 count++;
-                if (count == 3) {
+                if (count == REQUIRED_CORRECT_ANSWERS) {
                     System.out.println("Congratulations, " + person + "!");
                 }
             } else {
@@ -51,9 +55,6 @@ public class Prime {
                 System.out.println("Let's try again, " + person + "!");
                 break;
             }
-
         }
-
-
     }
 }

@@ -10,6 +10,15 @@ import hexlet.code.games.Progression;
 import java.util.Scanner;
 
 public class Engine {
+    // Именованные константы для выбора игры
+    private static final int EXIT_GAME = 0;
+    private static final int GREET_GAME = 1;
+    private static final int EVAL_GAME = 2;
+    private static final int CALC_GAME = 3;
+    private static final int GCD_GAME = 4;
+    private static final int PROGRESSION_GAME = 5;
+    private static final int PRIME_GAME = 6;
+
     public static void startEngine() {
         System.out.println("Please enter the game number and press Enter.");
         var menu = new Menu();
@@ -18,67 +27,29 @@ public class Engine {
         int num = Integer.parseInt(input.nextLine());
 
         switch (num) {
-            case 0:
+            case EXIT_GAME:
                 System.out.println("Goodbye!");
                 break;
-            case 1:
+            case GREET_GAME:
                 Greet.startGreet(1);
                 break;
-
-            case 2:
+            case EVAL_GAME:
                 Eval.startGameEval();
                 break;
-            case 3:
+            case CALC_GAME:
                 Calc.startGameCalc();
                 break;
-            case 4:
+            case GCD_GAME:
                 GCD.startGameGCD();
                 break;
-            case 5:
+            case PROGRESSION_GAME:
                 Progression.startGameProgression();
                 break;
-            case 6:
+            case PRIME_GAME:
                 Prime.startGamePrime();
                 break;
-            default: System.out.println("Goodbye!");
+            default:
+                System.out.println("Goodbye!");
         }
-
     }
-
-
-//    public String gameEval(String person) {
-//
-//        Random random = new Random();
-//
-//        System.out.println("Answer 'Yes' if the number is even, otherwise answer 'No'.");
-//
-//
-//        Scanner s = new Scanner(System.in);
-//        int countCorrect = 0;
-//        for (int i = 0; i < 3; i++) {
-//            int randomNumber = random.nextInt(100);
-//            System.out.println("Question: " + randomNumber);
-//            System.out.println("Your answer: ");
-//            String answer = s.nextLine();
-//            if (answer.equals("Yes") && randomNumber % 2 == 0) {
-//                System.out.println("Correct!");
-//                countCorrect ++;
-//            } else if (answer.equals("No") && randomNumber % 2 != 0) {
-//                countCorrect ++;
-//                System.out.println("Correct!");
-//            } else {
-//                System.out.println("'Yes' is wrong answer ;(. Correct answer was 'No'." +
-//                        "Let's try again, " + person);
-//                break;
-//            }
-//        }
-//        if (countCorrect == 3) {
-//            return "Congratulations, " + person;
-//        }
-//        return "";
-//    }
-//    public String gameCalc(String person) {
-//        return "";
-//    }
-
 }
