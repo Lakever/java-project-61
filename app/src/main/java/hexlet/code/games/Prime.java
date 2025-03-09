@@ -10,6 +10,10 @@ public class Prime {
     private static final int GAME_COUNT = 6; // Параметр для startGreet
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
+    private static final int USUAL_SIMPLE_NUM_3 = 3;
+    private static final int USUAL_SIMPLE_NUM_2 = 2;
+    private static final int USUAL_DELITEL_5 = 5;
+    private static final int USUAL_DELITEL_6 = 6;
 
     public static void startGamePrime() {
         var person = startGreet(GAME_COUNT);
@@ -28,13 +32,13 @@ public class Prime {
 
             if (randNum < 2) {
                 status = "no"; // 0 и 1 не являются простыми числами
-            } else if (randNum == 2 || randNum == 3) {
+            } else if (USUAL_SIMPLE_NUM_2 == 2 || randNum == USUAL_SIMPLE_NUM_3) {
                 status = "yes"; // 2 и 3 — простые числа
-            } else if (randNum % 2 == 0 || randNum % 3 == 0) {
+            } else if (USUAL_SIMPLE_NUM_2 % 2 == 0 || randNum % USUAL_SIMPLE_NUM_3 == 0) {
                 status = "no"; // Числа, делящиеся на 2 или 3, не являются простыми
             } else {
                 status = "yes"; // Предполагаем, что число простое, пока не найдём делитель
-                for (int i = 5; i * i <= randNum; i += 6) {
+                for (int i = USUAL_DELITEL_5; i * i <= randNum; i += USUAL_DELITEL_6) {
                     if (randNum % i == 0 || randNum % (i + 2) == 0) {
                         status = "no"; // Если делитель найден, число не простое
                         break; // Прерываем цикл, так как дальнейшая проверка не нужна
