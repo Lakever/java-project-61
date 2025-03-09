@@ -6,23 +6,27 @@ import java.util.Scanner;
 import static hexlet.code.games.Greet.startGreet;
 
 public class Calc {
+    // Именованные константы для магических чисел
+    private static final int GAME_COUNT = 3; // Параметр для startGreet
+    private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
+    private static final int MAX_RANDOM_NUMBER = 99; // Максимальное значение для случайных чисел
+    private static final int OPERATION_COUNT = 3; // Количество операций (+, -, *)
+
     public static void startGameCalc() {
         Random random = new Random();
-        var person = startGreet(3);
-
+        var person = startGreet(GAME_COUNT);
 
         int result = 0;
         String[] arr = {"+", "-", "*"}; // Возможные операции
-        int count = 0;
         int countCorrect = 0;
         Scanner s = new Scanner(System.in);
 
         System.out.println("What is the result of the expression?");
-        for (var i = 0; i < 3; i++) {
-            int lol = random.nextInt(2);
+        for (var i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
+            int lol = random.nextInt(OPERATION_COUNT);
             if (arr[lol].equals("+")) {
-                int slag1 = random.nextInt(99);
-                int slag2 = random.nextInt(99);
+                int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+                int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
 
                 System.out.println("Question: " + slag1 + " + " + slag2);
 
@@ -35,14 +39,14 @@ public class Calc {
                     countCorrect++;
                     System.out.println("Correct!");
                 } else {
-                    System.out.println("'" + res + "'" + "is wrong answer ;(. "
+                    System.out.println("'" + res + "'" + " is wrong answer ;(. "
                             + "Correct answer was " + "'" + result + "'" + ".");
                     System.out.println("Let's try again, " + person + "!");
                     break;
                 }
             } else if (arr[lol].equals("-")) {
-                int slag1 = random.nextInt(99);
-                int slag2 = random.nextInt(99);
+                int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+                int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
 
                 System.out.println("Question: " + slag1 + " - " + slag2);
 
@@ -60,8 +64,8 @@ public class Calc {
                     break;
                 }
             } else {
-                int slag1 = random.nextInt(99);
-                int slag2 = random.nextInt(99);
+                int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+                int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
 
                 System.out.println("Question: " + slag1 + " * " + slag2);
 
@@ -79,25 +83,9 @@ public class Calc {
                     break;
                 }
             }
-
         }
 
-//        if (arr[lol].equals("+")) {
-//            result = slag1 + slag2;
-//            System.out.println(result);
-//        } else if (arr[lol].equals("-")) {
-//            result = slag1 - slag2;
-//            System.out.println(result);
-//        } else {
-//            result = slag1 * slag2;
-//            System.out.println(result);
-//        }
-
-//        for (int i = 0; i < arr.length; i++) {
-//
-//        }
-
-        if (countCorrect == 3) {
+        if (countCorrect == REQUIRED_CORRECT_ANSWERS) {
             System.out.println("Congratulations, " + person + "!");
         }
     }
