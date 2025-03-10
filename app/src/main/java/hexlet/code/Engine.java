@@ -1,15 +1,45 @@
-//package hexlet.code;
-//
-//import hexlet.code.games.Calc;
-//import hexlet.code.games.Eval;
-//import hexlet.code.games.GCD;
-//import hexlet.code.games.Greet;
-//import hexlet.code.games.Prime;
-//import hexlet.code.games.Progression;
-//
-//import java.util.Scanner;
-//
-//public class Engine {
+package hexlet.code;
+
+import hexlet.code.games.Calc;
+import hexlet.code.games.Eval;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Greet;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
+
+import java.util.Scanner;
+
+public class Engine {
+    private static final int REQUIRED_CORRECT_ANSWERS = 3;
+    private static final int GREET_GAME_NUM = 1;
+    public static void gameLogic () {
+        var person = Greet.startGreet(GREET_GAME_NUM);
+        Scanner scanner = new Scanner(System.in);
+
+
+        for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
+
+        }
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //    // Именованные константы для выбора игры
 //    private static final int EXIT_GAME = 0;
 //    private static final int GREET_GAME = 1;

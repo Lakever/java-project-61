@@ -17,22 +17,14 @@ public class App {
     private static final int PRIME_GAME = 6;
 
     public static void main(String[] args) {
-
-
-        // Именованные константы для выбора игры
-
-
-
-
-
-
         startEngine();
     }
-
+    // Запуск движка игр
     public static void startEngine () {
         System.out.println("Please enter the game number and press Enter.");
-        var menu = new Menu();
-        menu.showMenu();
+        //Показываем Меню
+        showMenu();
+
         Scanner input = new Scanner(System.in);
         int num = Integer.parseInt(input.nextLine());
 
@@ -60,6 +52,13 @@ public class App {
                 break;
             default:
                 System.out.println("Goodbye!");
+        }
+    }
+
+    public static void showMenu() {
+        String[] arr = {"1 - Greet", "2 - Eval", "3 - Calc", "4 - GCD", "5 - Progression", "6 - Prime", "0 - Exit"};
+        for (var i = 0; i < arr.length; i++) {
+            System.out.println(arr[i]);
         }
     }
 
