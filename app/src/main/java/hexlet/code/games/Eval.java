@@ -3,6 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
+import static hexlet.code.Engine.runGame;
 import static hexlet.code.games.Greet.startGreet;
 
 public class Eval {
@@ -15,17 +16,18 @@ public class Eval {
         var person = startGreet(GAME_COUNT);
 
         Random random = new Random();
-        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+        String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-        Scanner s = new Scanner(System.in);
-        int countCorrect = 0;
+//        Scanner s = new Scanner(System.in);
+//        int countCorrect = 0;
+        String[] question = new String[REQUIRED_CORRECT_ANSWERS];
 
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
             int randomNumber = random.nextInt(MAX_RANDOM_NUMBER);
+            question[i] = Integer.toString(randomNumber);
 
-            System.out.println("Question: " + randomNumber);
-            System.out.print("Your answer: ");
-            String answer = s.nextLine();
+
+            runGame(rules, question, userAnswer,);
 
             boolean isEven = randomNumber % 2 == 0;
             boolean isCorrect = (isEven && answer.equals("yes")) || (!isEven && answer.equals("no"));

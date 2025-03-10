@@ -1,24 +1,45 @@
 package hexlet.code;
 
-import hexlet.code.games.Calc;
-import hexlet.code.games.Eval;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Greet;
-import hexlet.code.games.Prime;
-import hexlet.code.games.Progression;
+import hexlet.code.games.*;
+import hexlet.code.games.Eval.*;
 
+import java.util.Random;
 import java.util.Scanner;
+
+
+
 
 public class Engine {
     private static final int REQUIRED_CORRECT_ANSWERS = 3;
     private static final int GREET_GAME_NUM = 1;
-    public static void gameLogic () {
+
+    public static void runGame (String rules, String[] question,
+                                String userAnswer, String[] correctAnswer) {
+
         var person = Greet.startGreet(GREET_GAME_NUM);
-        Scanner scanner = new Scanner(System.in);
+        Scanner s = new Scanner(System.in);
+        Random random = new Random();
 
+        int countCorrect = 0;// счётчик правильныъ ответов
 
+        System.out.println(rules);
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
+            System.out.println(question[i]);
+            System.out.println("Your Answer: ");
+            String answer = scanner.nextLine();
 
+            if (correctAnswer[i].equals(userAnswer)) {
+                countCorrect++;
+                System.out.println("Correct!");
+                if (countCorrect == REQUIRED_CORRECT_ANSWERS) {
+                    System.out.println("Congratulations, " + person + "!");
+                }
+            } else {
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                        + "Correct answer was " + "'" + correctAnswer[i] + "'" + ".");
+                System.out.println("Let's try again, " + person + "!");
+                break;
+            }
         }
     }
 
