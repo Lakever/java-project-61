@@ -45,7 +45,7 @@ public class Calc {
                 int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
 
                 question[i] = slag1 + " * " + slag2;
-                correctAnswers[i] = Integer.toString(slag1 - slag2);
+                correctAnswers[i] = Integer.toString(slag1 * slag2);
             }
         }
         runGame(rules, question, correctAnswers, GAME_COUNT);
