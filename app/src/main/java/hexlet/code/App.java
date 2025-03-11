@@ -1,11 +1,14 @@
 
 package hexlet.code;
 
-
-import hexlet.code.games.*;
+import hexlet.code.games.Greet;
+import hexlet.code.games.Eval;
+import hexlet.code.games.Calc;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Progression;
+import hexlet.code.games.Prime;
 
 import java.util.Scanner;
-
 
 public class App {
     private static final int EXIT_GAME = 0;
@@ -20,7 +23,7 @@ public class App {
         startEngine();
     }
     // Запуск движка игр
-    public static void startEngine () {
+    public static void startEngine() {
         System.out.println("Please enter the game number and press Enter.");
         //Показываем Меню
         showMenu();

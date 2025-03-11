@@ -1,6 +1,6 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Greet;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -12,13 +12,13 @@ public class Engine {
     private static final int REQUIRED_CORRECT_ANSWERS = 3;
 
 
-    public static void runGame (String rules, String[] question, String[] correctAnswer, int gameNum) {
+    public static void runGame(String rules, String[] question, String[] correctAnswer, int gameNum) {
 
         var person = Greet.startGreet(gameNum);
         Scanner s = new Scanner(System.in);
         Random random = new Random();
 
-        int countCorrect = 0;// счётчик правильныъ ответов
+        int countCorrect = 0; // счётчик правильныъ ответов
 
         System.out.println(rules);
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {

@@ -1,10 +1,8 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import java.util.Scanner;
 
 import static hexlet.code.Engine.runGame;
-import static hexlet.code.games.Greet.startGreet;
 
 public class Eval {
     // Именованные константы для магических чисел
@@ -35,8 +33,7 @@ public class Eval {
                 correctAnswer[i] = "no";
             }
         }
-
         //ЗАПУСКАЕМ ДВИГАТЕЛЬ!!!
-        runGame(rules, question, correctAnswer,GAME_NUM);
+        runGame(rules, question, correctAnswer, GAME_NUM);
     }
 }

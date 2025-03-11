@@ -1,10 +1,9 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import java.util.Scanner;
 
 import static hexlet.code.Engine.runGame;
-import static hexlet.code.games.Greet.startGreet;
+
 
 public class Prime {
     // Именованные константы для магических чисел
@@ -26,8 +25,6 @@ public class Prime {
         for (var j = 0; j < REQUIRED_CORRECT_ANSWERS; j++) {
             int randNum = rand.nextInt(MAX_RANDOM_NUMBER) + 1;
             question[j] = "Question: " + randNum;
-
-            String status = "";
 
             if (randNum < 2) {
                 correctAnswers[j] = "no"; // 0 и 1 не являются простыми числами

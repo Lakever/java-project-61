@@ -1,10 +1,8 @@
 package hexlet.code.games;
 
 import java.util.Random;
-import java.util.Scanner;
 
 import static hexlet.code.Engine.runGame;
-import static hexlet.code.games.Greet.startGreet;
 
 public class GCD {
     // Именованные константы для магических чисел
@@ -45,6 +43,6 @@ public class GCD {
             }
             correctAnswers[i] = Integer.toString(a);
         }
-        runGame(rules,question, correctAnswers,GAME_COUNT);
+        runGame(rules, question, correctAnswers, GAME_COUNT);
     }
 }

@@ -1,10 +1,9 @@
 package hexlet.code.games;
-import hexlet.code.games.*;
+
 import java.util.Random;
-import java.util.Scanner;
+
 
 import static hexlet.code.Engine.runGame;
-import static hexlet.code.games.Greet.startGreet;
 
 public class Calc {
     // Именованные константы для магических чисел
@@ -47,11 +46,11 @@ public class Calc {
 
                 question[i] = slag1 + " * " + slag2;
                 correctAnswers[i] = Integer.toString(slag1 - slag2);
-                }
             }
-            runGame(rules,question,correctAnswers,GAME_COUNT);
         }
-
-
+        runGame(rules, question, correctAnswers, GAME_COUNT);
     }
+
+
+}
 
