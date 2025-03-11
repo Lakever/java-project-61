@@ -3,6 +3,7 @@ package hexlet.code.games;
 import java.util.Random;
 import java.util.Scanner;
 
+import static hexlet.code.Engine.runGame;
 import static hexlet.code.games.Greet.startGreet;
 
 public class Prime {
@@ -16,49 +17,35 @@ public class Prime {
     private static final int USUAL_DELITEL_6 = 6;
 
     public static void startGamePrime() {
-        var person = startGreet(GAME_COUNT);
-        int count = 0;
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+        String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
+        String[] question = new String[REQUIRED_CORRECT_ANSWERS];
+        String[] correctAnswers = new String[REQUIRED_CORRECT_ANSWERS];
 
         Random rand = new Random();
-        Scanner scanner = new Scanner(System.in);
 
         for (var j = 0; j < REQUIRED_CORRECT_ANSWERS; j++) {
             int randNum = rand.nextInt(MAX_RANDOM_NUMBER) + 1;
-            System.out.println("Question: " + randNum);
+            question[j] = "Question: " + randNum;
 
-            String answer = scanner.nextLine();
             String status = "";
 
             if (randNum < 2) {
-                status = "no"; // 0 и 1 не являются простыми числами
+                correctAnswers[j] = "no"; // 0 и 1 не являются простыми числами
             } else if (randNum == USUAL_SIMPLE_NUM_2 || randNum == USUAL_SIMPLE_NUM_3) {
-                status = "yes"; // 2 и 3 — простые числа
+                correctAnswers[j] = "yes"; // 2 и 3 — простые числа
             } else if (randNum % USUAL_SIMPLE_NUM_2 == 0 || randNum % USUAL_SIMPLE_NUM_3 == 0) {
-                status = "no"; // Числа, делящиеся на 2 или 3, не являются простыми
+                correctAnswers[j] = "no"; // Числа, делящиеся на 2 или 3, не являются простыми
             } else {
-                status = "yes"; // Предполагаем, что число простое, пока не найдём делитель
+                correctAnswers[j] = "yes"; // Предполагаем, что число простое, пока не найдём делитель
                 for (int i = USUAL_DELITEL_5; i * i <= randNum; i += USUAL_DELITEL_6) {
                     if (randNum % i == 0 || randNum % (i + 2) == 0) {
-                        status = "no"; // Если делитель найден, число не простое
+                        correctAnswers[j] = "no"; // Если делитель найден, число не простое
                         break; // Прерываем цикл, так как дальнейшая проверка не нужна
                     }
                 }
             }
 
-            if (answer.equalsIgnoreCase(status)) {
-                System.out.printf("Your answer: '%s'\n", answer);
-                System.out.println("Correct!");
-                count++;
-                if (count == REQUIRED_CORRECT_ANSWERS) {
-                    System.out.println("Congratulations, " + person + "!");
-                }
-            } else {
-                System.out.println("'" + answer + "'" + " is wrong answer ;(. "
-                        + "Correct answer was " + "'" + status + "'" + ".");
-                System.out.println("Let's try again, " + person + "!");
-                break;
-            }
         }
+        runGame(rules, question, correctAnswers, GAME_COUNT);
     }
 }

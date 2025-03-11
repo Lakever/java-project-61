@@ -22,7 +22,7 @@ public class Engine {
 
         System.out.println(rules);
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
-            System.out.println(question[i]);
+            System.out.println("Question: " + question[i]);
             String answer = s.nextLine();
             System.out.println("Your Answer: " + answer);
 

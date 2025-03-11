@@ -14,7 +14,7 @@ public class Progression {
     private static final int MAX_STEP = 9; // Максимальный шаг прогрессии
 
     public static void startGameProgression() {
-        var person = startGreet(GAME_COUNT);
+//        var person = startGreet(GAME_COUNT);
 
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
