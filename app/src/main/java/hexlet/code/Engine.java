@@ -1,7 +1,6 @@
 package hexlet.code;
 
 import hexlet.code.games.*;
-import hexlet.code.games.Eval.*;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -11,12 +10,11 @@ import java.util.Scanner;
 
 public class Engine {
     private static final int REQUIRED_CORRECT_ANSWERS = 3;
-    private static final int GREET_GAME_NUM = 1;
 
-    public static void runGame (String rules, String[] question,
-                                String userAnswer, String[] correctAnswer) {
 
-        var person = Greet.startGreet(GREET_GAME_NUM);
+    public static void runGame (String rules, String[] question, String[] correctAnswer, int gameNum) {
+
+        var person = Greet.startGreet(gameNum);
         Scanner s = new Scanner(System.in);
         Random random = new Random();
 
@@ -25,17 +23,18 @@ public class Engine {
         System.out.println(rules);
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
             System.out.println(question[i]);
-            System.out.println("Your Answer: ");
-            String answer = scanner.nextLine();
+            String answer = s.nextLine();
+            System.out.println("Your Answer: " + answer);
 
-            if (correctAnswer[i].equals(userAnswer)) {
+            //Проверка правильности ответов
+            if (correctAnswer[i].equals(answer)) {
                 countCorrect++;
                 System.out.println("Correct!");
                 if (countCorrect == REQUIRED_CORRECT_ANSWERS) {
                     System.out.println("Congratulations, " + person + "!");
                 }
             } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. "
+                System.out.println("'" + answer + "'" + " is wrong answer ;(. "
                         + "Correct answer was " + "'" + correctAnswer[i] + "'" + ".");
                 System.out.println("Let's try again, " + person + "!");
                 break;

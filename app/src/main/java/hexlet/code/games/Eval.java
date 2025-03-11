@@ -8,12 +8,12 @@ import static hexlet.code.games.Greet.startGreet;
 
 public class Eval {
     // Именованные константы для магических чисел
-    private static final int GAME_COUNT = 2; // Параметр для startGreet
+    private static final int GAME_NUM = 2; // Параметр для startGreet
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
 
-    public static String startGameEval() {
-        var person = startGreet(GAME_COUNT);
+    public static void startGameEval() {
+//        var person = startGreet(GAME_COUNT);
 
         Random random = new Random();
         String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
@@ -21,30 +21,22 @@ public class Eval {
 //        Scanner s = new Scanner(System.in);
 //        int countCorrect = 0;
         String[] question = new String[REQUIRED_CORRECT_ANSWERS];
+        String[] correctAnswer = new String[REQUIRED_CORRECT_ANSWERS];
 
+        //Нужно сформировать ответы для передачи их в engine
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
             int randomNumber = random.nextInt(MAX_RANDOM_NUMBER);
             question[i] = Integer.toString(randomNumber);
 
-
-            runGame(rules, question, userAnswer,);
-
-            boolean isEven = randomNumber % 2 == 0;
-            boolean isCorrect = (isEven && answer.equals("yes")) || (!isEven && answer.equals("no"));
-
-            if (isCorrect) {
-                countCorrect++;
-                System.out.println("Correct!");
-                if (countCorrect == REQUIRED_CORRECT_ANSWERS) {
-                    System.out.println("Congratulations, " + person + "!");
-                }
+            // Нужно проверить правильны ли ответы для передачи их в engine
+            if (Integer.parseInt(question[i]) % 2 == 0) {
+                correctAnswer[i] = "yes";
             } else {
-                String correctAnswer = isEven ? "yes" : "no";
-                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '" + correctAnswer + "'.");
-                System.out.println("Let's try again, " + person + "!");
-                break; // Выход при неправильном ответе
+                correctAnswer[i] = "no";
             }
         }
-        return "";
+
+        //ЗАПУСКАЕМ ДВИГАТЕЛЬ!!!
+        runGame(rules, question, correctAnswer,GAME_NUM);
     }
 }
