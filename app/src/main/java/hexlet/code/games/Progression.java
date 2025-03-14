@@ -7,7 +7,6 @@ import static hexlet.code.Engine.runGame;
 
 public class Progression {
     // Именованные константы для магических чисел
-    private static final int GAME_COUNT = 5; // Параметр для startGreet
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int PROGRESSION_LENGTH = 10; // Длина прогрессии
     private static final int MAX_STEP = 9; // Максимальный шаг прогрессии

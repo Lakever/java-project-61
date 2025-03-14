@@ -6,7 +6,6 @@ import static hexlet.code.Engine.runGame;
 
 public class GCD {
     // Именованные константы для магических чисел
-    private static final int GAME_COUNT = 4; // Параметр для startGreet
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
 

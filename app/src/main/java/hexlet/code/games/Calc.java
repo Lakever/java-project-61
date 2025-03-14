@@ -7,7 +7,6 @@ import static hexlet.code.Engine.runGame;
 
 public class Calc {
     // Именованные константы для магических чисел
-    private static final int GAME_COUNT = 3; // Параметр для startGreet
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 99; // Максимальное значение для случайных чисел
     private static final int OPERATION_COUNT = 3; // Количество операций (+, -, *)

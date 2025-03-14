@@ -7,7 +7,6 @@ import static hexlet.code.Engine.runGame;
 
 public class Prime {
     // Именованные константы для магических чисел
-    private static final int GAME_COUNT = 6; // Параметр для startGreet
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
     private static final int USUAL_SIMPLE_NUM_3 = 3; // Всё ниже добавил из-за ругани checkStyle'a

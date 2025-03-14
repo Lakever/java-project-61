@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class App {
     private static final int EXIT_GAME = 0;
-    private static final int GREET_GAME = 1;
     private static final int EVAL_GAME = 2;
     private static final int CALC_GAME = 3;
     private static final int GCD_GAME = 4;
