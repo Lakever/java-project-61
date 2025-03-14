@@ -5,35 +5,24 @@ import java.util.Random;
 import static hexlet.code.Engine.runGame;
 
 public class Eval {
-    // Именованные константы для магических чисел
-    private static final int GAME_NUM = 2; // Параметр для startGreet
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
 
-    public static void startGameEval() {
-//        var person = startGreet(GAME_COUNT);
-
+    public static void startGameEval(String person) {
         Random random = new Random();
         String rules = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
-//        Scanner s = new Scanner(System.in);
-//        int countCorrect = 0;
-        String[] question = new String[REQUIRED_CORRECT_ANSWERS];
-        String[] correctAnswer = new String[REQUIRED_CORRECT_ANSWERS];
+        String[] questions = new String[REQUIRED_CORRECT_ANSWERS];
+        String[] correctAnswers = new String[REQUIRED_CORRECT_ANSWERS];
 
-        //Нужно сформировать ответы для передачи их в engine
+        // Формируем вопросы и ответы
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
             int randomNumber = random.nextInt(MAX_RANDOM_NUMBER);
-            question[i] = Integer.toString(randomNumber);
-
-            // Нужно проверить правильны ли ответы для передачи их в engine
-            if (Integer.parseInt(question[i]) % 2 == 0) {
-                correctAnswer[i] = "yes";
-            } else {
-                correctAnswer[i] = "no";
-            }
+            questions[i] = Integer.toString(randomNumber);
+            correctAnswers[i] = (randomNumber % 2 == 0) ? "yes" : "no";
         }
-        //ЗАПУСКАЕМ ДВИГАТЕЛЬ!!!
-        runGame(rules, question, correctAnswer, GAME_NUM);
+
+        // Запускаем движок
+        runGame(rules, questions, correctAnswers, person);
     }
 }

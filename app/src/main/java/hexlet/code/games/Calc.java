@@ -12,7 +12,7 @@ public class Calc {
     private static final int MAX_RANDOM_NUMBER = 99; // Максимальное значение для случайных чисел
     private static final int OPERATION_COUNT = 3; // Количество операций (+, -, *)
 
-    public static void startGameCalc() {
+    public static void startGameCalc(String person) {
         Random random = new Random();
 //        var person = startGreet(GAME_COUNT);
 
@@ -48,7 +48,7 @@ public class Calc {
                 correctAnswers[i] = Integer.toString(slag1 * slag2);
             }
         }
-        runGame(rules, question, correctAnswers, GAME_COUNT);
+        runGame(rules, question, correctAnswers, person);
     }
 
 

@@ -12,7 +12,7 @@ public class Progression {
     private static final int PROGRESSION_LENGTH = 10; // Длина прогрессии
     private static final int MAX_STEP = 9; // Максимальный шаг прогрессии
 
-    public static void startGameProgression() {
+    public static void startGameProgression(String person) {
         String rules = "What number is missing in the progression?";
         String[] question = new String[REQUIRED_CORRECT_ANSWERS];
         String[] correctAnswers = new String[REQUIRED_CORRECT_ANSWERS];
@@ -45,6 +45,6 @@ public class Progression {
             question[j] = progressionString;
 
         }
-        runGame(rules, question, correctAnswers, GAME_COUNT);
+        runGame(rules, question, correctAnswers, person);
     }
 }

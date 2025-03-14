@@ -1,7 +1,5 @@
-
 package hexlet.code;
 
-import hexlet.code.games.Greet;
 import hexlet.code.games.Eval;
 import hexlet.code.games.Calc;
 import hexlet.code.games.GCD;
@@ -20,38 +18,41 @@ public class App {
     private static final int PRIME_GAME = 6;
 
     public static void main(String[] args) {
-        startEngine();
+        startApp();
     }
+
     // Запуск движка игр
-    public static void startEngine() {
+    public static void startApp() {
         System.out.println("Please enter the game number and press Enter.");
-        //Показываем Меню
         showMenu();
 
         Scanner input = new Scanner(System.in);
         int num = Integer.parseInt(input.nextLine());
 
+        // Приветствие пользователя
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        String person = input.nextLine();
+        System.out.println("Hello, " + person + "!");
+
         switch (num) {
             case EXIT_GAME:
                 System.out.println("Goodbye!");
                 break;
-            case GREET_GAME:
-                Greet.startGreet(1);
-                break;
             case EVAL_GAME:
-                Eval.startGameEval();
+                Eval.startGameEval(person);
                 break;
             case CALC_GAME:
-                Calc.startGameCalc();
+                Calc.startGameCalc(person);
                 break;
             case GCD_GAME:
-                GCD.startGameGCD();
+                GCD.startGameGCD(person);
                 break;
             case PROGRESSION_GAME:
-                Progression.startGameProgression();
+                Progression.startGameProgression(person);
                 break;
             case PRIME_GAME:
-                Prime.startGamePrime();
+                Prime.startGamePrime(person);
                 break;
             default:
                 System.out.println("Goodbye!");
@@ -64,5 +65,4 @@ public class App {
             System.out.println(arr[i]);
         }
     }
-
 }

@@ -15,7 +15,7 @@ public class Prime {
     private static final int USUAL_DELITEL_5 = 5;
     private static final int USUAL_DELITEL_6 = 6;
 
-    public static void startGamePrime() {
+    public static void startGamePrime(String person) {
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
         String[] question = new String[REQUIRED_CORRECT_ANSWERS];
         String[] correctAnswers = new String[REQUIRED_CORRECT_ANSWERS];
@@ -43,6 +43,6 @@ public class Prime {
             }
 
         }
-        runGame(rules, question, correctAnswers, GAME_COUNT);
+        runGame(rules, question, correctAnswers, person);
     }
 }

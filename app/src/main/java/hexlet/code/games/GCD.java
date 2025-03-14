@@ -10,7 +10,7 @@ public class GCD {
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
 
-    public static void startGameGCD() {
+    public static void startGameGCD(String person) {
 
         String rules = "Find the greatest common divisor of given numbers.";
         String[] correctAnswers = new String[REQUIRED_CORRECT_ANSWERS];
@@ -43,6 +43,6 @@ public class GCD {
             }
             correctAnswers[i] = Integer.toString(a);
         }
-        runGame(rules, question, correctAnswers, GAME_COUNT);
+        runGame(rules, question, correctAnswers, person);
     }
 }
