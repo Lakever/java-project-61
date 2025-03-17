@@ -18,7 +18,7 @@ public class Eval {
         String[][] arrayQuestion = new String[ROWS][REQUIRED_CORRECT_ANSWERS];
 
         // Формируем вопросы и ответы
-        for (int i = 0; i < ROWS; i++) {
+        for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
             int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;
 
             arrayQuestion[0][i] = Integer.toString(randomNumber);
