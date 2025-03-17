@@ -23,7 +23,7 @@ public class Calc {
 
         //Параметры для runGame
         String rules = "What is the result of the expression?";
-        for (int i = 0; i < ROWS; i++) {
+        for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
             int operation = random.nextInt(OPERATION_COUNT);
             if (arr[operation].equals("+")) {
                 int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
