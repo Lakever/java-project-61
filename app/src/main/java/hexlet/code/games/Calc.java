@@ -15,7 +15,7 @@ public class Calc {
     public static void startGameCalc(String person) {
         Random random = new Random();
 //        var person = startGreet(GAME_COUNT);
-
+        // Инициализируем двумерный массив как представление вопрос- ответ
         String[][] arrayQuestion = new String[ROWS][REQUIRED_CORRECT_ANSWERS];
 
         String[] arr = {"+", "-", "*"}; // Возможные операции

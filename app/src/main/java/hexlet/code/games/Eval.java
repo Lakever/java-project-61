@@ -19,7 +19,7 @@ public class Eval {
 
         // Формируем вопросы и ответы
         for (int i = 0; i < ROWS; i++) {
-            int randomNumber = random.nextInt(MAX_RANDOM_NUMBER);
+            int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + 1;
 
             arrayQuestion[0][i] = Integer.toString(randomNumber);
             arrayQuestion[1][i] = (randomNumber % 2 == 0) ? "yes" : "no";
