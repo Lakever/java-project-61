@@ -25,7 +25,7 @@ public class GCD {
 
             int a = 0;
             int b = 0;
-            int temp = 0;
+
 
             if (slag1 > slag2) {
                 b = slag1;
@@ -36,15 +36,21 @@ public class GCD {
             }
 
             arrayQuestion[0][i] = "Question: " + a + " " + b;
-
-            // Алгоритм нахождения НОД Евклида
-            while (b != 0) {
-                temp = b;
-                b = a % b;
-                a = temp;
-            }
-            arrayQuestion[1][i] = Integer.toString(a);
+            
+            var res = algEvklid(a,b);
+            arrayQuestion[1][i] = Integer.toString(res);
         }
         runGame(rules, arrayQuestion, person);
+    }
+
+    public static int algEvklid(Integer a, Integer b) {
+        // Алгоритм нахождения НОД Евклида
+        int temp = 0;
+        while (b != 0) {
+            temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
     }
 }
