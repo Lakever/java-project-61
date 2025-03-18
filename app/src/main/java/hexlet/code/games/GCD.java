@@ -37,7 +37,7 @@ public class GCD {
 
             arrayQuestion[0][i] = "Question: " + a + " " + b;
 
-            var res = algEvklid(a,b);
+            var res = algEvklid(a, b);
             arrayQuestion[1][i] = Integer.toString(res);
         }
         runGame(rules, arrayQuestion, person);

@@ -10,6 +10,10 @@ public class Prime {
     private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
     private static final int MIN_RANDOM_NUMBER = 1; // Минимальное значение для случайных чисел
+    private static final int magickDel3 = 3;
+    private static final int magickDel5 = 5;
+    private static final int magickDel6 = 6;
+
 
     public static void startGamePrime(String person) {
 
@@ -35,14 +39,14 @@ public class Prime {
         if (number < 2) {
             return false; // 0 и 1 не являются простыми числами
         }
-        if (number == 2 || number == 3) {
+        if (number == 2 || number == magickDel3) {
             return true; // 2 и 3 — простые числа
         }
-        if (number % 2 == 0 || number % 3 == 0) {
+        if (number % 2 == 0 || number % magickDel3 == 0) {
             return false; // Числа, делящиеся на 2 или 3, не являются простыми
         }
         // Проверка делителей от 5 до квадратного корня из числа
-        for (int i = 5; i * i <= number; i += 6) {
+        for (int i = magickDel5; i * i <= number; i += magickDel6) {
             if (number % i == 0 || number % (i + 2) == 0) {
                 return false;
             }
