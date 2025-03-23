@@ -13,7 +13,7 @@ public class GCD {
     public static void startGameGCD() {
 
 
-        String[][] arrayQuestion = new String[ROWS][REQUIRED_CORRECT_ANSWERS];
+        String[][] arrayQuestion = new String[REQUIRED_CORRECT_ANSWERS][ROWS];
         String rules = "Find the greatest common divisor of given numbers.";
 //        String[] correctAnswers = new String[REQUIRED_CORRECT_ANSWERS];
 //        String[] question = new String[REQUIRED_CORRECT_ANSWERS];
