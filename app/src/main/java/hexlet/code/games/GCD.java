@@ -3,14 +3,14 @@ package hexlet.code.games;
 import java.util.Random;
 
 import static hexlet.code.Engine.runGame;
+import static hexlet.code.Engine.REQUIRED_CORRECT_ANSWERS;
 
 public class GCD {
     // Именованные константы для магических чисел
     private static final int ROWS = 2;
-    private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
 
-    public static void startGameGCD(String person) {
+    public static void startGameGCD() {
 
 
         String[][] arrayQuestion = new String[ROWS][REQUIRED_CORRECT_ANSWERS];
@@ -22,10 +22,8 @@ public class GCD {
 
             int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
             int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
-
             int a = 0;
             int b = 0;
-
 
             if (slag1 > slag2) {
                 b = slag1;
@@ -35,12 +33,12 @@ public class GCD {
                 b = slag1;
             }
 
-            arrayQuestion[0][i] = "Question: " + a + " " + b;
+            arrayQuestion[i][0] = "Question: " + a + " " + b;
 
             var res = algEvklid(a, b);
-            arrayQuestion[1][i] = Integer.toString(res);
+            arrayQuestion[i][1] = Integer.toString(res);
         }
-        runGame(rules, arrayQuestion, person);
+        runGame(rules, arrayQuestion);
     }
 
     public static int algEvklid(Integer a, Integer b) {

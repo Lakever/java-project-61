@@ -1,60 +1,53 @@
 package hexlet.code.games;
 
 import java.util.Random;
-
-
+import static hexlet.code.Engine.REQUIRED_CORRECT_ANSWERS;
 import static hexlet.code.Engine.runGame;
 
 public class Calc {
     // Именованные константы для магических чисел
     private static final int ROWS = 2;
-    private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 99; // Максимальное значение для случайных чисел
-    private static final int OPERATION_COUNT = 3; // Количество операций (+, -, *)
+    private static final String[] OPERATIONS = {"+", "-", "*"}; // Возможные операции
 
-    public static void startGameCalc(String person) {
+    public static void startGameCalc() {
         Random random = new Random();
-//        var person = startGreet(GAME_COUNT);
-        // Инициализируем двумерный массив как представление вопрос- ответ
-        String[][] arrayQuestion = new String[ROWS][REQUIRED_CORRECT_ANSWERS];
+        // Инициализируем двумерный массив как представление вопрос-ответ
+        String[][] arrayQuestion = new String[REQUIRED_CORRECT_ANSWERS][ROWS];
 
-        String[] arr = {"+", "-", "*"}; // Возможные операции
-
-
-        //Параметры для runGame
+        // Параметры для runGame
         String rules = "What is the result of the expression?";
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
-            int operation = random.nextInt(OPERATION_COUNT);
-            if (arr[operation].equals("+")) {
-                int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
-                int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
-                // Вопрос
-                arrayQuestion[0][i] = "Question: " + slag1 + " + " + slag2;
-                // Ответ
-                arrayQuestion[1][i] = Integer.toString(slag1 + slag2);
+            int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
+            String operation = OPERATIONS[random.nextInt(OPERATIONS.length)];
 
-            } else if (arr[operation].equals("-")) {
-                int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
-                int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
-
-                // Вопрос
-                arrayQuestion[0][i] = "Question: " + slag1 + " - " + slag2;
-                // Ответ
-                arrayQuestion[1][i] = Integer.toString(slag1 - slag2);
-
-            } else {
-                int slag1 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
-                int slag2 = random.nextInt(MAX_RANDOM_NUMBER) + 1;
-
-                // Вопрос
-                arrayQuestion[0][i] = "Question: " + slag1 + " * " + slag2;
-                // Ответ
-                arrayQuestion[1][i] = Integer.toString(slag1 * slag2);
-            }
+            // Формируем вопрос
+            arrayQuestion[i][0] = "Question: " + slag1 + " " + operation + " " + slag2;
+            // Вычисляем ответ
+            arrayQuestion[i][1] = Integer.toString(calculate(slag1, slag2, operation));
         }
-        runGame(rules, arrayQuestion, person);
+        runGame(rules, arrayQuestion);
     }
 
-
+    /**
+     * Вычисляет результат выражения.
+     *
+     * @param slag1     Первое число
+     * @param slag2     Второе число
+     * @param operation Операция (+, -, *)
+     * @return резултьтат операции
+     */
+    public static int calculate(int slag1, int slag2, String operation) {
+        switch (operation) {
+            case "+":
+                return slag1 + slag2;
+            case "-":
+                return slag1 - slag2;
+            case "*":
+                return slag1 * slag2;
+            default:
+                throw new IllegalArgumentException("Неизвестная операция: " + operation);
+        }
+    }
 }
-

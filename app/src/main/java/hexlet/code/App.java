@@ -29,29 +29,29 @@ public class App {
         int num = Integer.parseInt(input.nextLine());
 
         // Приветствие пользователя
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String person = input.nextLine();
-        System.out.println("Hello, " + person + "!");
+//        System.out.println("Welcome to the Brain Games!");
+//        System.out.println("May I have your name?");
+//        String person = input.nextLine();
+//        System.out.println("Hello, " + person + "!");
 
         switch (num) {
             case EXIT_GAME:
                 System.out.println("Goodbye!");
                 break;
             case EVAL_GAME:
-                Eval.startGameEval(person);
+                Eval.startGameEval();
                 break;
             case CALC_GAME:
-                Calc.startGameCalc(person);
+                Calc.startGameCalc();
                 break;
             case GCD_GAME:
-                GCD.startGameGCD(person);
+                GCD.startGameGCD();
                 break;
             case PROGRESSION_GAME:
-                Progression.startGameProgression(person);
+                Progression.startGameProgression();
                 break;
             case PRIME_GAME:
-                Prime.startGamePrime(person);
+                Prime.startGamePrime();
                 break;
             default:
                 System.out.println("Goodbye!");

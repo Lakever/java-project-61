@@ -3,30 +3,33 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    private static final int REQUIRED_CORRECT_ANSWERS = 3;
+    public static final int REQUIRED_CORRECT_ANSWERS = 3;
 
-    public static void runGame(String rules, String[][] arrayQuestions, String person) {
+    public static void runGame(String rules, String[][] arrayQuestions) {
+        Scanner input = new Scanner(System.in);
+
+
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        String person = input.nextLine();
+        System.out.println("Hello, " + person + "!");
+
         Scanner scanner = new Scanner(System.in);
-
         System.out.println(rules);
+        for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
+            System.out.println("Question: " + arrayQuestions[i][0]);
+            String answer = scanner.nextLine();
+            System.out.println("Your answer: " + answer);
 
-        for (int i = 0; i < 1; i++) {
-            for (int j = 0; j < REQUIRED_CORRECT_ANSWERS; j++) {
-                System.out.println("Question: " + arrayQuestions[i][j]);
-                String answer = scanner.nextLine();
-                System.out.println("Your answer: " + answer);
-
-                if (arrayQuestions[1][j].equals(answer)) {
-                    System.out.println("Correct!");
-                } else {
-                    System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
-                            + arrayQuestions[1][j] + "'.");
-                    System.out.println("Let's try again, " + person + "!");
-                    return;
-                }
+            if (arrayQuestions[i][1].equals(answer)) {
+                System.out.println("Correct!");
+            } else {
+                System.out.println("'" + answer + "' is wrong answer ;(. Correct answer was '"
+                        + arrayQuestions[i][1] + "'.");
+                System.out.println("Let's try again, " + person + "!");
+                return;
             }
         }
-
         System.out.println("Congratulations, " + person + "!");
     }
 }

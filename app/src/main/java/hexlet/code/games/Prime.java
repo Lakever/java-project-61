@@ -2,12 +2,12 @@ package hexlet.code.games;
 
 import java.util.Random;
 
+import static hexlet.code.Engine.REQUIRED_CORRECT_ANSWERS;
 import static hexlet.code.Engine.runGame;
 
 public class Prime {
     // Именованные константы для магических чисел
     private static final int ROWS = 2;
-    private static final int REQUIRED_CORRECT_ANSWERS = 3; // Количество правильных ответов для победы
     private static final int MAX_RANDOM_NUMBER = 100; // Максимальное значение для случайных чисел
     private static final int MIN_RANDOM_NUMBER = 1; // Минимальное значение для случайных чисел
     private static final int MAGICK_DEL3 = 3;
@@ -15,9 +15,9 @@ public class Prime {
     private static final int MAGICK_DEL6 = 6;
 
 
-    public static void startGamePrime(String person) {
+    public static void startGamePrime() {
 
-        String[][] arrayQuestion = new String[ROWS][REQUIRED_CORRECT_ANSWERS];
+        String[][] arrayQuestion = new String[REQUIRED_CORRECT_ANSWERS][ROWS];
 
         String rules = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
@@ -26,12 +26,12 @@ public class Prime {
         // Генерация вопросов и ответов
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
             int randomNumber = random.nextInt(MAX_RANDOM_NUMBER) + MIN_RANDOM_NUMBER;
-            arrayQuestion[0][i] = Integer.toString(randomNumber);
-            arrayQuestion[1][i] = isPrime(randomNumber) ? "yes" : "no";
+            arrayQuestion[i][0] = Integer.toString(randomNumber);
+            arrayQuestion[i][1] = isPrime(randomNumber) ? "yes" : "no";
         }
 
         // Запуск игры
-        runGame(rules, arrayQuestion, person);
+        runGame(rules, arrayQuestion);
     }
 
     // Провека числа на простоту
