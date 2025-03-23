@@ -18,6 +18,7 @@ public class Progression {
 
         // Генерация вопросов и ответов
         for (int i = 0; i < REQUIRED_CORRECT_ANSWERS; i++) {
+
             int firstElement = RAND.nextInt(MAX_STEP) + 1; // Первый элемент прогрессии
             int step = RAND.nextInt(MAX_STEP) + 1; // Шаг прогрессии
             String[] progression = generateProgression(firstElement, step, PROGRESSION_LENGTH); // Генерация прогрессии

@@ -32,4 +32,12 @@ public class Engine {
         }
         System.out.println("Congratulations, " + person + "!");
     }
+    public static String greetings() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
+        String person = input.nextLine();
+        System.out.println("Hello, " + person + "!");
+        return person;
+    }
 }

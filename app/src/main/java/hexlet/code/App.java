@@ -8,8 +8,12 @@ import hexlet.code.games.Prime;
 
 import java.util.Scanner;
 
+import static hexlet.code.Cli.greetings;
+
+//import static hexlet.code.Engine.greetings;
+
 public class App {
-    private static final int EXIT_GAME = 0;
+    private static final int GRET_GAME = 1;
     private static final int EVAL_GAME = 2;
     private static final int CALC_GAME = 3;
     private static final int GCD_GAME = 4;
@@ -35,8 +39,8 @@ public class App {
 //        System.out.println("Hello, " + person + "!");
 
         switch (num) {
-            case EXIT_GAME:
-                System.out.println("Goodbye!");
+            case GRET_GAME:
+                greetings();
                 break;
             case EVAL_GAME:
                 Eval.startGameEval();
