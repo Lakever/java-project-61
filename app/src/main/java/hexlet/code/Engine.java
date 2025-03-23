@@ -2,6 +2,8 @@ package hexlet.code;
 
 import java.util.Scanner;
 
+import static hexlet.code.Cli.greetings;
+
 public class Engine {
     public static final int REQUIRED_CORRECT_ANSWERS = 3;
 
@@ -9,10 +11,11 @@ public class Engine {
         Scanner input = new Scanner(System.in);
 
 
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String person = input.nextLine();
-        System.out.println("Hello, " + person + "!");
+//        System.out.println("Welcome to the Brain Games!");
+//        System.out.println("May I have your name?");
+//        String person = input.nextLine();
+//        System.out.println("Hello, " + person + "!");
+        var person = greetings();
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(rules);
@@ -31,13 +34,5 @@ public class Engine {
             }
         }
         System.out.println("Congratulations, " + person + "!");
-    }
-    public static String greetings() {
-        Scanner input = new Scanner(System.in);
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        String person = input.nextLine();
-        System.out.println("Hello, " + person + "!");
-        return person;
     }
 }
